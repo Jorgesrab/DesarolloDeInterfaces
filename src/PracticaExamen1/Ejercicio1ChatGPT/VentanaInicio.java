@@ -1,4 +1,4 @@
-package PracticaExamen.Ejercicio1ChatGPT;
+package PracticaExamen1.Ejercicio1ChatGPT;
 
 import javax.swing.*;
 import java.awt.*;
