@@ -28,6 +28,7 @@ public class VentanaPrincipal extends JFrame {
         gbc.gridy = 1;
         add(btnVerInventario, gbc);
 
+
         gbc.gridx = 0;
         gbc.gridy = 2;
         add(btnSalir, gbc);
@@ -39,5 +40,6 @@ public class VentanaPrincipal extends JFrame {
 
     public static void main(String[] args) {
         SwingUtilities.invokeLater(() -> new VentanaPrincipal().setVisible(true));
+
     }
 }
