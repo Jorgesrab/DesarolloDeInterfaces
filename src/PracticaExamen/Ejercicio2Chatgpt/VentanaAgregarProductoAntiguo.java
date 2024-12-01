@@ -1,17 +1,17 @@
 package PracticaExamen.Ejercicio2Chatgpt;
-
+// VentanaAgregarProducto.java
 import javax.swing.*;
 import java.awt.*;
 import java.util.ArrayList;
 
-public class VentanaAgregarProducto extends JFrame {
+public class VentanaAgregarProductoAntiguo extends JFrame {
     private JTextField txtNombre, txtCodigo;
     private JComboBox<String> comboCategoria;
-    private EstadoBotonPersonalizado botonEstado;
+    private JCheckBox checkDisponible;
 
     public static ArrayList<Producto> productos = new ArrayList<>();
 
-    public VentanaAgregarProducto() {
+    public VentanaAgregarProductoAntiguo() {
         setTitle("Agregar Producto");
         setSize(400, 300);
         setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
@@ -21,7 +21,9 @@ public class VentanaAgregarProducto extends JFrame {
         txtNombre = new JTextField(15);
         txtCodigo = new JTextField(15);
         comboCategoria = new JComboBox<>(new String[]{"Electrónica", "Ropa", "Alimentos"});
-        botonEstado = new EstadoBotonPersonalizado();
+        checkDisponible = new JCheckBox("Disponible/No Disponible");
+
+        checkDisponible.addActionListener(e -> checkDisponible.setBackground(checkDisponible.isSelected() ? Color.GREEN : Color.RED));
         JButton btnGuardar = new JButton("Guardar");
 
         gbc.insets = new Insets(10, 10, 10, 10);
@@ -61,7 +63,7 @@ public class VentanaAgregarProducto extends JFrame {
 
         gbc.gridx = 1;
         gbc.gridy = 3;
-        add(botonEstado, gbc);
+        add(checkDisponible, gbc);
 
         // Botón Guardar
         gbc.gridx = 0;
@@ -73,7 +75,7 @@ public class VentanaAgregarProducto extends JFrame {
             String nombre = txtNombre.getText();
             String codigo = txtCodigo.getText();
             String categoria = (String) comboCategoria.getSelectedItem();
-            boolean disponible = botonEstado.isActivo();
+            boolean disponible = checkDisponible.isSelected();
 
             if (nombre.isEmpty() || codigo.isEmpty()) {
                 JOptionPane.showMessageDialog(this, "Nombre y Código son obligatorios.");

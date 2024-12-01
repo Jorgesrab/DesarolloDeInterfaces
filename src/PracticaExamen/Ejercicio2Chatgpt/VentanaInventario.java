@@ -13,7 +13,7 @@ public class VentanaInventario extends JFrame {
         GridBagConstraints gbc = new GridBagConstraints();
 
         String[] columnNames = {"Nombre", "Código", "Categoría", "Estado"};
-        String[][] data = VentanaAgregarProducto.productos.stream()
+        String[][] data = VentanaAgregarProductoAntiguo.productos.stream()
                 .map(p -> new String[]{p.getNombre(), p.getCodigo(), p.getCategoria(), p.isDisponible() ? "Disponible" : "No Disponible"})
                 .toArray(String[][]::new);
 

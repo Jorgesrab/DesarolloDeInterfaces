@@ -33,7 +33,7 @@ public class VentanaPrincipal extends JFrame {
         gbc.gridy = 2;
         add(btnSalir, gbc);
 
-        btnAgregarProducto.addActionListener(e -> new VentanaAgregarProducto().setVisible(true));
+        btnAgregarProducto.addActionListener(e -> new VentanaAgregarProductoAntiguo().setVisible(true));
         btnVerInventario.addActionListener(e -> new VentanaInventario().setVisible(true));
         btnSalir.addActionListener(e -> System.exit(0));
     }
